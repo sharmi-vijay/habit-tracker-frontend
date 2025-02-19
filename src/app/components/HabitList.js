@@ -19,26 +19,24 @@ export default function HabitList() {
         }
     }, []);
 
-    const fetchHabits = async () => {
-        if (!userId) {
-            setError("User not logged in.");
-            setLoading(false);
-            return;
-        }
-
-        try {
-            const res = await axios.get(`https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/habits/${userId}`);
-            setHabits(res.data);
-            setLoading(false);
-        } catch (err) {
-            setError("Failed to fetch habits. Please try again later.");
-            setLoading(false);
-        }
-    };
-
     useEffect(() => {
+        if (!userId) return;
+
+        const fetchHabits = async () => {
+            try {
+                const res = await axios.get(`http://localhost:5000/habits/${userId}`);
+                setHabits(res.data);
+                setError(null);
+            } catch (err) {
+                setError("Failed to fetch habits. Please try again later.");
+            } finally {
+                setLoading(false);
+            }
+        };
+
         fetchHabits();
     }, [userId, refresh]); // Refresh list when needed
+    
 
     // Handle habit deletion
     const handleDelete = async (habitId) => {
