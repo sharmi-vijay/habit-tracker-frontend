@@ -1,4 +1,4 @@
-
+"use client"
 
 import HabitForm from "../components/HabitForm";
 import HabitList from "../components/HabitList";
