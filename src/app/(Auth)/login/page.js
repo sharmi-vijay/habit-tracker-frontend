@@ -16,7 +16,7 @@ export default function Login() {
         }
 
         try {
-            const res = await axios.post("http://localhost:5000/login", { email, password });
+            const res = await axios.post("https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/login", { email, password });
             if (res.status === 200) {
                 localStorage.setItem("token", res.data.token);
                 localStorage.setItem("email", res.data.email);  
