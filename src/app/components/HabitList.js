@@ -27,7 +27,7 @@ export default function HabitList() {
         }
 
         try {
-            const res = await axios.get(`http://localhost:5000/habits/${userId}`);
+            const res = await axios.get(`https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/habits/${userId}`);
             setHabits(res.data);
             setLoading(false);
         } catch (err) {
@@ -43,7 +43,7 @@ export default function HabitList() {
     // Handle habit deletion
     const handleDelete = async (habitId) => {
         try {
-            const res = await axios.delete(`http://localhost:5000/habits/${habitId}`);
+            const res = await axios.delete(`https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/habits/${habitId}`);
             console.log("Habit deleted:", res.data);
             setRefresh(prev => !prev);
         } catch (err) {
@@ -54,7 +54,7 @@ export default function HabitList() {
     // Handle habit editing
     const handleEdit = async (habitId) => {
         try {
-            const res = await axios.put(`http://localhost:5000/habits/${habitId}`, { name: updatedName });
+            const res = await axios.put(`https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/habits/${habitId}`, { name: updatedName });
             console.log("habit updated:", res.data)
             setRefresh(prev => !prev);
         } catch (err) {
