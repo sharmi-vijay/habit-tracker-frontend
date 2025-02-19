@@ -11,7 +11,7 @@ export default function Login() {
 
     const handleLogin = async () => {
         try {
-            const res = await axios.post("http://localhost:5000/login", 
+            const res = await axios.post("https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/login", 
                 { email, password },
                 { headers: { "Content-Type": "application/json" } } 
             );
