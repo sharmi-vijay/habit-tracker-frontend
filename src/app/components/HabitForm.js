@@ -6,7 +6,7 @@ import HabitList from "./HabitList";
 export default function HabitForm() {
     const [habit, setHabit] = useState("");
     const [change, setChange] = useState("add new Habit");
-    const [habits, setHabits] = useState([]);
+    const [habits, setHabits] = useState([]);  
     
    
     const [userId, setUserId] = useState(null);
