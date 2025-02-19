@@ -36,7 +36,7 @@ export default function HabitForm() {
 
             console.log("Sending habit data:", { user_id: userId, name: habit });
 
-            const response = await fetch("https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/habits", {
+            const response = await fetch("https://backendsa.vercel.app/habits", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ user_id: userId, name: habit }),
@@ -59,7 +59,7 @@ export default function HabitForm() {
         if (!userId) return;
 
         try {
-            const response = await fetch(`https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/habits/${userId}`, { method: "GET" });
+            const response = await fetch(`https://backendsa.vercel.app/habits/${userId}`, { method: "GET" });
 
             if (!response.ok) throw new Error("Failed to fetch habits");
 
