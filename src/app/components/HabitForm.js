@@ -7,11 +7,17 @@ export default function HabitForm() {
     const [habit, setHabit] = useState("");
     const [change, setChange] = useState("add new Habit");
     const [habits, setHabits] = useState([]);
-
+    
    
-    const user_id = Number(localStorage.getItem("user_id")); 
+    const [userId, setUserId] = useState(null);
 
-    const userId = user_id ? parseInt(user_id, 10) : null;
+    // Fetch user ID safely inside useEffect
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const storedUserId = localStorage.getItem("user_id");
+            setUserId(storedUserId ? parseInt(storedUserId, 10) : null);
+        }
+    }, []);
 
     console.log("User ID:", userId);
 
