@@ -19,7 +19,7 @@ export default function Register() {
         }
 
         try {
-            await axios.post("https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/register", { name, email, phone, password });
+            await axios.post("https://backendsa.vercel.app/register", { name, email, phone, password });
             router.push("/login");
         } catch (err) {
             setError("Registration failed. Please try again.");
