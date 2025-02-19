@@ -22,7 +22,7 @@ export default function Register() {
         const data = { name, email, phone, password };
 
         try {
-            const response = await axios.post("http://localhost:5000/register", data);
+            const response = await axios.post("https://backendsa-git-main-manojkumars-projects-922c9146.vercel.app/register", data);
             console.log(response.data);
             setSuccess("Registration successful! Redirecting to login...");
             setError(null);
