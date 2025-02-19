@@ -13,7 +13,7 @@ export default function HabitForm() {
 
     // Fetch user ID safely inside useEffect
     useEffect(() => {
-        if (typeof window !== "undefined") {
+        if (typeof window !== "undefined") {  
             const storedUserId = localStorage.getItem("user_id");
             setUserId(storedUserId ? parseInt(storedUserId, 10) : null);
         }
